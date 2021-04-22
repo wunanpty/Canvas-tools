@@ -1,4 +1,4 @@
-Clone from https://github.com/gqmaguirejr/Canvas-tools on 04/21/2021
+Fork from https://github.com/gqmaguirejr/Canvas-tools on 04/21/2021
 
 ## Canvas-tools
 Tools for use with Instructure.com's Canvas LMS. These tools
