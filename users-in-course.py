@@ -39,6 +39,8 @@ import optparse
 import sys
 import json
 
+import datetime
+
 # Use Python Pandas to create XLSX files
 import pandas as pd
 
@@ -102,7 +104,15 @@ def users_in_course(course_id):
         print("url: {}".format(url))
 
     extra_parameters={'per_page': '100'}
+    
+    
+    a = datetime.datetime.now()
     r = requests.get(url, params=extra_parameters, headers = header)
+    b = datetime.datetime.now()
+    print('############################NANWU##########################')
+    print((b - a).total_seconds())
+    
+    
     if Verbose_Flag:
         print("result of getting enrollments: {}".format(r.text))
 
@@ -306,7 +316,15 @@ def main():
         print("Insuffient arguments - must provide course_id\n")
     else:
         course_id=remainder[0]
+        
+        a = datetime.datetime.now()
         users=users_in_course(course_id)
+        b = datetime.datetime.now()
+        print('############################NANWU##########################\n')
+        print('total time spent\n')
+        print((b - a).total_seconds())
+        print('############################NANWU##########################\n')
+    
         if options.testing:     # if testing only get the list of users and then return
             return
         
